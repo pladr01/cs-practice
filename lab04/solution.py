@@ -16,11 +16,13 @@ def ranking(names,scores):
             (names[i-1],names[i])=(names[i],names[i-1])
     return (names)
 
-names=[]
-scores=[]
-for i in range (0,3):
-    names.append(input())
-    scores.append(int(input()))
+# names=[]
+# scores=[]
+# for i in range (0,3):
+#     names.append(input())
+#     scores.append(int(input()))
+winner()
+ranking()
 print(winner(names,scores))
 sr=sum(scores)/len(scores)
 print(round(sr,2))
