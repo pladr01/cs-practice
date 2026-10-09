@@ -1,5 +1,5 @@
 def winner(names,scores):
-    maxb=0
+    maxb=-999999999
     k=0
     for i in range(0,len(scores)):
         if maxb<scores[i]: maxb=scores[i]
@@ -24,7 +24,15 @@ def above_avarage(names,scores,sr):
         if scores[i]>sr:newnemes.append(names[i])
     return newnemes
 
-
+names=[]
+scores=[]
+for i in range (0,3):
+    names.append(input())
+    scores.append(int(input()))
+print(winner(names,scores))
+print(average(names,scores))
+print(ranking(names,scores))
+print(above_avarage(names,scores,average(names,scores)))
 
 
 
