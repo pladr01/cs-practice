@@ -10,24 +10,29 @@ def winner(names,scores):
     print(maxb)
 
 def ranking(names,scores):
-    for i in range(1,len(names)):
-        if scores[i-1]>scores[i]:
-            (scores[i-1],scores[i])=(scores[i],scores[i-1])
-            (names[i-1],names[i])=(names[i],names[i-1])
-    return (names)
+    newnames=names[:]
+    newnames=sorted(zip(scores,newnames),reverse=True)
+    newnames=[newnames[i][1] for i in range(0,len(newnames))]
+    return (newnames)
 
-# names=[]
-# scores=[]
-# for i in range (0,3):
-#     names.append(input())
-#     scores.append(int(input()))
-winner()
-ranking()
+def avarage(names,scores):
+    return round(sum(scores)/len(scores),2)
+
+def above_avarage(names,scores,sr):
+    newnemes=[]
+    for i in range(0,len(names)):
+        if scores[i]>sr:newnemes.append(names[i])
+    return newnemes
+
+names=[]
+scores=[]
+for i in range (0,3):
+    names.append(input())
+    scores.append(int(input()))
 print(winner(names,scores))
-sr=sum(scores)/len(scores)
-print(round(sr,2))
+print(avarage(names,scores))
 print(ranking(names,scores))
-for i in range (0,len(names)):
-    if scores[i]>sr: print(names[i])
+print(above_avarage(names,scores,avarage(names,scores)))
+
 
 
