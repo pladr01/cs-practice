@@ -15,7 +15,7 @@ def ranking(names,scores):
     newnames=[newnames[i][1] for i in range(0,len(newnames))]
     return (newnames)
 
-def avarage(names,scores):
+def average(names,scores):
     return round(sum(scores)/len(scores),2)
 
 def above_avarage(names,scores,sr):
@@ -30,9 +30,9 @@ for i in range (0,3):
     names.append(input())
     scores.append(int(input()))
 print(winner(names,scores))
-print(avarage(names,scores))
+print(average(names,scores))
 print(ranking(names,scores))
-print(above_avarage(names,scores,avarage(names,scores)))
+print(above_avarage(names,scores,average(names,scores)))
 
 
 
