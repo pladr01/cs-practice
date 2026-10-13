@@ -19,6 +19,8 @@ def ranking(names, scores):
     ]
 
 def average(scores):
+    if len(scores)==0:
+        return 0
     return round(sum(scores)/len(scores),2)
 
 def above_average(names, scores):
