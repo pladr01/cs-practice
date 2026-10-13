@@ -9,13 +9,16 @@ def winner(names,scores):
             return names[i]
     print(maxb)
 
-def ranking(names,scores):
-    newnames=names[:]
-    newnames=sorted(zip(scores,newnames),reverse=True)
-    newnames=[newnames[i][1] for i in range(0,len(newnames))]
-    return (newnames)
+def ranking(names, scores):
+    return [
+        name for score, name in sorted(
+            zip(scores, names),
+            key=lambda x: x[0],
+            reverse=True
+        )
+    ]
 
-def average(names,scores):
+def average(scores):
     return round(sum(scores)/len(scores),2)
 
 def above_average(names,scores,sr):
