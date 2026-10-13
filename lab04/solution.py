@@ -18,7 +18,7 @@ def ranking(names,scores):
 def average(names,scores):
     return round(sum(scores)/len(scores),2)
 
-def above_avarage(names,scores,sr):
+def above_average(names,scores,sr):
     newnemes=[]
     for i in range(0,len(names)):
         if scores[i]>sr:newnemes.append(names[i])
