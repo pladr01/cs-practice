@@ -1,7 +1,7 @@
 from pathlib import Path
 from tablestats import read_rows, count_types, total_minutes, to_csv
 
-def main(): filename = input().strip()
+def main(): filename = 'events-small'
 with open(path, encoding="utf-8") as table:
     rows = read_rows(table)
 counts = count_types(rows)
