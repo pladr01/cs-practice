@@ -30,7 +30,7 @@ def count_types(rows):
     return counts
 
 
-def sum_time(rows, kind):
+def total_minutes(rows, kind):
     total = 0.0
     for row in rows:
         if row["тип"] != kind:
