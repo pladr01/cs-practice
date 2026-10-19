@@ -1,21 +1,21 @@
 def read_rows(lines):
-    rows = []
-    header = None
+    rows=[]
+    namest=None
     for line in lines:
-        line = line.strip()
-        if line == "":
+        line=line.strip()
+        if line=="":
             continue
-        fields = []
+        fields=[]
         for value in line.split(","):
             fields.append(value.strip())
-        if header is None:
-            header = fields
+        if namest is None:
+            namest=fields
             continue
-        if len(fields) != len(header):
+        if len(fields)!=len(namest):
             continue
-        row = {}
-        for i in range(len(header)):
-            row[header[i]] = fields[i]
+        row={}
+        for i in range(len(namest)):
+            row[namest[i]]=fields[i]
         rows.append(row)
     return rows
 
@@ -30,7 +30,7 @@ def count_types(rows):
     return counts
 
 
-def total_minutes(rows, kind):
+def sum_time(rows, kind):
     total = 0.0
     for row in rows:
         if row["тип"] != kind:
@@ -42,6 +42,8 @@ def total_minutes(rows, kind):
             continue
         total += minutes
     return round(total, 1)
+
+
 def to_csv(counts):
     text = "тип,количество\n"
     for kind in sorted(counts):
