@@ -1,6 +1,6 @@
 from tablestats import read_rows, count_types, total_minutes, to_csv
 
-with open(path, 'r', encoding="utf-8") as table:
+with open("tablestats.py", 'r', encoding="utf-8") as table:
     rows = read_rows(table.readlines())
     print(len(rows))
     print(len(count_types(rows)))
