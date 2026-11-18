@@ -24,5 +24,5 @@ def cap_above(values, limit):
 
 def celsius_to_fahrenheit(values):
     new_values = values.copy()
-    new_values[::1]*=new_values*9/5+32
+    new_values[::1]*=9/5+32
     return new_values.tolist()
