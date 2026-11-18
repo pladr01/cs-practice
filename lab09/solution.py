@@ -3,12 +3,7 @@ def make_hours():
     return np.arange(0,22,3).tolist()
 
 def vector_report(values):
-    sl={}
-    sl.append(values[2],values[-1])
-    sl.append(values[2:6])
-    sl.append(values[::2])
-    sl.append(values[::-1])
-    return np.asarray(sl).tolist()
+    return {values[2],values[-1],values[2:6],values[::2],values[::-1]}
 
 def change_vector(values):
     new_values=values.copy()
