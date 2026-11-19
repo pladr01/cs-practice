@@ -16,7 +16,7 @@ def change_vector(values):
     return new_values.tolist()
 
 def cap_above(values, limit):
-    new_values=values.copy()
+    new_values=np.asanyarray(values).copy()
     mask=new_values>limit
     new_values[mask]=limit
     return new_values.tolist()
