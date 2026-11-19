@@ -3,7 +3,11 @@ def make_hours():
     return np.arange(0,22,3).tolist()
 
 def vector_report(values):
-    return [values[2],values[-1],values[2:6],values[::2],values[::-1]]
+    return {"third":values[2],
+            "last":values[-1],
+            "middle":values[2:6],
+            "every_second":values[::2],
+            "reversed": values[::-1]}
 
 def change_vector(values):
     new_values=np.asanyarray(values).copy()
