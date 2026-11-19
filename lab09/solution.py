@@ -22,6 +22,6 @@ def cap_above(values, limit):
     return new_values.tolist()
 
 def celsius_to_fahrenheit(values):
-    new_values = values.copy()
+    new_values = np.asanyarray(values).copy()
     new_values[::1]=new_values[::1]*9/5+32
     return new_values.tolist()
